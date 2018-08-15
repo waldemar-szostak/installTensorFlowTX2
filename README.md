@@ -8,7 +8,7 @@ It is assumed that your Jetson TX2 is flashed with JetPack 3.2.1 which installed
 * cuDNN 7.0.5
 
 Moreover, I adjusted my scripts to work with my workspace containing:
-- 'tensorflow' directory: a clone of my TensorFlow repository: https://github.com/waldemar-szostak/tensorflow (basically it contains any patches needed for the platform) with the release v1.9.0 already checked out,
+- 'tensorflow' directory: a clone of my TensorFlow repository: https://github.com/waldemar-szostak/tensorflow (basically it contains any patches needed for the platform) with the branch v1.9 already checked out,
 - a clone of this repository.
 
 ### Pre-built installation
