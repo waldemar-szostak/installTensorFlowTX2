@@ -31,3 +31,21 @@ cd bazel-$BAZEL_VERSION-dist
 sudo mkdir /usr/local/bin &> /dev/null
 
 sudo cp output/bazel /usr/local/bin/
+
+
+
+echo 'Getting NCCL...'
+cd /tmp
+git clone https://github.com/NVIDIA/nccl.git
+cd nccl/
+make -j6 CUDA_HOME="$CUDA_TOOLKIT_PATH"
+
+sudo make install
+sudo mkdir -p /usr/local/include/external/nccl_archive/src
+sudo ln -s /usr/local/include/nccl.h /usr/local/include/external/nccl_archive/src/nccl.h
+
+
+
+echo 'Cleaning up..'
+cd /tmp
+rm -R nccl/ bazel-$BAZEL_VERSION-dist*
